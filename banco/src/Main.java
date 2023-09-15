@@ -1,17 +1,12 @@
 public class Main {
     public static void main(String[] args) {
 
-        Pessoa pessoa = new Pessoa();
-        pessoa.nome = "Beatriz";
-        pessoa.documento = "02105460186";
+        Pessoa pessoa = new Pessoa("Beatriz", "02105460186");
 
-        Conta contaItau = new Conta();
-        contaItau.titular = pessoa;
-        contaItau.agencia = 64;
-        contaItau.numero = 0664;
-        contaItau.saldo = 100.00;
-        contaItau.depositar(40_000);
-        contaItau.sacar(40_150);
+        Conta contaItau = new Conta(pessoa, 64, 0664);
+        contaItau.saldo = 1000.00;
+        contaItau.depositar(99_000);
+        contaItau.sacarComTaxa(1_000, 10);
 
 
         System.out.println("Nome do titular: " + contaItau.titular.nome);
@@ -20,20 +15,19 @@ public class Main {
         System.out.println("Saldo: " + contaItau.saldo);
 
 
-        Pessoa pessoa2 = new Pessoa();
-        pessoa2.nome = "Ana Flávia";
-        pessoa2.documento = "300300300-30";
+        Pessoa pessoa2 = new Pessoa("Ana Flávia", "30030030030");
 
 
-        Conta contaDoConjuge = new Conta();
-        contaDoConjuge.titular = pessoa2;
-        contaDoConjuge.agencia = 64;
-        contaDoConjuge.numero = 0661;
+        Conta contaDoConjuge = new Conta(pessoa2, 64, 0661);
         contaDoConjuge.saldo = 10_000;
         contaDoConjuge.saldo = 80_000;
 
-        Conta contaFamilia = new Conta();
-        contaFamilia.saldo = contaItau.saldo + contaDoConjuge.saldo;
+        Conta contaFamilia = new Conta(contaItau.saldo + contaDoConjuge.saldo);
         System.out.println(contaFamilia.saldo);
+
+
+        // Testando Objects.requireNonNull
+        Conta contaDoFilho = new Conta(new Pessoa("Arthur", "90090090009"), 64, 01354);
+        System.out.println("Conta do filho: " + contaDoFilho.titular.nome);
     }
 }
