@@ -10,6 +10,9 @@ public class Main {
         contaItau.agencia = 64;
         contaItau.numero = 0664;
         contaItau.saldo = 100.00;
+        contaItau.depositar(40_000);
+        contaItau.sacar(40_150);
+
 
         System.out.println("Nome do titular: " + contaItau.titular.nome);
         System.out.println("Agencia: " + contaItau.agencia);
@@ -21,12 +24,13 @@ public class Main {
         pessoa2.nome = "Ana Flávia";
         pessoa2.documento = "300300300-30";
 
+
         Conta contaDoConjuge = new Conta();
         contaDoConjuge.titular = pessoa2;
         contaDoConjuge.agencia = 64;
         contaDoConjuge.numero = 0661;
         contaDoConjuge.saldo = 10_000;
-
+        contaDoConjuge.saldo = 80_000;
 
         Conta contaFamilia = new Conta();
         contaFamilia.saldo = contaItau.saldo + contaDoConjuge.saldo;
