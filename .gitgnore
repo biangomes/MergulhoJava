@@ -9,10 +9,10 @@ hs_err_pid*
 ##############################
 ## IntelliJ
 ##############################
-.banco/out/
-.MergulhoJava/out
-.banco/idea/
-.MergulhoJava/idea/
+.banco/out/*
+.MergulhoJava/out/*
+.banco/idea/*
+.MergulhoJava/idea/*
 .idea_modules/
 *.iml
 *.ipr
