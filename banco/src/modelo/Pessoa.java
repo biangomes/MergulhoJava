@@ -1,8 +1,10 @@
+package modelo;
+
 public class Pessoa {
     private String nome;
     private String documento;
 
-    Pessoa(String nome, String documento) {
+    public Pessoa(String nome, String documento) {
         this.nome = nome;
         this.documento = documento;
     }
