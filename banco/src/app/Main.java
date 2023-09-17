@@ -4,6 +4,10 @@ import modelo.Conta;
 import modelo.ContaEspecial;
 import modelo.Investimento;
 import modelo.Pessoa;
+import modelo.atm.CaixaEletronico;
+import modelo.pagamento.Boleto;
+import modelo.pagamento.DocumentoPagavel;
+import modelo.pagamento.Holerite;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +29,13 @@ public class Main {
 
         contaEspecial.depositar(15_000);
         contaEspecial.sacar(15_012);
+
+
+        DocumentoPagavel boleto = new Boleto(pessoa, 200.00);
+        Holerite holerite = new Holerite(pessoa, 100, 10);
+
+        CaixaEletronico caixaEletronico = new CaixaEletronico();
+        caixaEletronico.pagar(boleto, contaItau);
+        System.out.println("Boleto pago: " + boleto.estaPago());
     }
 }
