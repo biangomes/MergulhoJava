@@ -14,9 +14,12 @@ public class Main {
     public static void main(String[] args) {
 
         Pessoa pessoa = new Pessoa("Beatriz", "02105460186");
+        pessoa.setRendimentoAnual(15_000d);
         Conta minhaConta = new Conta(pessoa, 64, 0664);
         Investimento suaConta = new Investimento(pessoa, minhaConta.getAgencia(), minhaConta.getNumero());
         CaixaEletronico caixaEletronico = new CaixaEletronico();
+
+        double rendimento = pessoa.getRendimentoAnual();
 
         try {
             minhaConta.depositar(999);
