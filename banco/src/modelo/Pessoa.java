@@ -1,11 +1,12 @@
 package modelo;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Pessoa {
     private String nome;
     private String documento;
-    private Double rendimentoAnual;
+    private BigDecimal rendimentoAnual;
     private TipoPessoa tipo = TipoPessoa.FISICA;
     private LocalDateTime dataUltimaAtualizacao = LocalDateTime.now();
 
@@ -32,11 +33,11 @@ public class Pessoa {
         this.documento = documento;
     }
 
-    public Double getRendimentoAnual() {
+    public BigDecimal getRendimentoAnual() {
         return rendimentoAnual;
     }
 
-    public void setRendimentoAnual(Double rendimentoAnual) {
+    public void setRendimentoAnual(BigDecimal rendimentoAnual) {
         this.rendimentoAnual = rendimentoAnual;
     }
 
