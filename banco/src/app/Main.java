@@ -5,6 +5,7 @@ import modelo.ContaEspecial;
 import modelo.Investimento;
 import modelo.Pessoa;
 import modelo.atm.CaixaEletronico;
+import modelo.excecao.SaldoInsuficienteException;
 import modelo.pagamento.Boleto;
 import modelo.pagamento.DocumentoPagavel;
 import modelo.pagamento.Holerite;
@@ -32,7 +33,7 @@ public class Main {
 
             caixaEletronico.pagar(boletoEscola, minhaConta);
             caixaEletronico.pagar(salarioFuncionario, minhaConta);
-        } catch (IllegalStateException e) {
+        } catch (SaldoInsuficienteException e) {
             System.out.println("Erro ao executar operação na conta: " + e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println("Erro no argumento da conta: " + e.getMessage());

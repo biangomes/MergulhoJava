@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.excecao.SaldoInsuficienteException;
+
 import java.util.Objects;
 
 public class Conta {
@@ -57,7 +59,7 @@ public class Conta {
         }
 
         if (getSaldoDisponivel() - valor < 0) {
-            throw new IllegalStateException("Saldo insuficiente.");
+            throw new SaldoInsuficienteException("Saldo insuficiente.");
         }
 
         this.saldo -= valor;
