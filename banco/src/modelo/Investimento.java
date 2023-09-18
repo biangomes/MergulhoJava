@@ -1,6 +1,7 @@
 package modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Investimento extends Conta {
 
@@ -15,7 +16,7 @@ public class Investimento extends Conta {
 
     }
     public void creditarRendimentos(BigDecimal percentualJuros) {
-        BigDecimal valorRendimento = getSaldo().multiply(percentualJuros).divide(new BigDecimal("100.00"));;
+        BigDecimal valorRendimento = getSaldo().multiply(percentualJuros).divide(new BigDecimal("100.00"), 3, RoundingMode.HALF_EVEN);;
         depositar(valorRendimento);
     }
 }
