@@ -4,6 +4,9 @@ public class Pessoa {
     private String nome;
     private String documento;
     private Double rendimentoAnual;
+    private TIpoPessoa tipo = TIpoPessoa.FISICA;
+
+    public Pessoa() {}
 
     public Pessoa(String nome, String documento) {
         this.nome = nome;
@@ -32,5 +35,13 @@ public class Pessoa {
 
     public void setRendimentoAnual(Double rendimentoAnual) {
         this.rendimentoAnual = rendimentoAnual;
+    }
+
+    public TIpoPessoa getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TIpoPessoa tipo) {
+        this.tipo = tipo;
     }
 }

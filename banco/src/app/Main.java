@@ -1,9 +1,6 @@
 package app;
 
-import modelo.Conta;
-import modelo.ContaEspecial;
-import modelo.Investimento;
-import modelo.Pessoa;
+import modelo.*;
 import modelo.atm.CaixaEletronico;
 import modelo.excecao.SaldoInsuficienteException;
 import modelo.pagamento.Boleto;
@@ -13,8 +10,14 @@ import modelo.pagamento.Holerite;
 public class Main {
     public static void main(String[] args) {
 
-        Pessoa pessoa = new Pessoa("Beatriz", "02105460186");
+        Pessoa pessoa = new Pessoa();
+        pessoa.setNome("Beatriz");
+        pessoa.setDocumento("02105460186");
         pessoa.setRendimentoAnual(15_000d);
+        //pessoa.setTipo(TIpoPessoa.FISICA);
+        System.out.println(pessoa.getTipo());
+
+
         Conta minhaConta = new Conta(pessoa, 64, 0664);
         Investimento suaConta = new Investimento(pessoa, minhaConta.getAgencia(), minhaConta.getNumero());
         CaixaEletronico caixaEletronico = new CaixaEletronico();
