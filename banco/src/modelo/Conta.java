@@ -10,7 +10,7 @@ public class Conta {
     private Pessoa titular;
     private int agencia;
     private int numero;
-    private BigDecimal saldo;
+    private BigDecimal saldo = BigDecimal.ZERO;
 
     public Conta() {}
 
@@ -21,7 +21,7 @@ public class Conta {
         this.numero = numero;
     }
 
-    public Conta(double saldo) {
+    public Conta(BigDecimal saldo) {
         this.saldo = saldo;
     }
 
