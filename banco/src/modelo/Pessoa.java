@@ -1,10 +1,13 @@
 package modelo;
 
+import java.time.LocalDateTime;
+
 public class Pessoa {
     private String nome;
     private String documento;
     private Double rendimentoAnual;
-    private TIpoPessoa tipo = TIpoPessoa.FISICA;
+    private TipoPessoa tipo = TipoPessoa.FISICA;
+    private LocalDateTime dataUltimaAtualizacao = LocalDateTime.now();
 
     public Pessoa() {}
 
@@ -37,11 +40,19 @@ public class Pessoa {
         this.rendimentoAnual = rendimentoAnual;
     }
 
-    public TIpoPessoa getTipo() {
+    public TipoPessoa getTipo() {
         return tipo;
     }
 
-    public void setTipo(TIpoPessoa tipo) {
+    public void setTipo(TipoPessoa tipo) {
         this.tipo = tipo;
+    }
+
+    public LocalDateTime getDataUltimaAtualizacao() {
+        return dataUltimaAtualizacao;
+    }
+
+    public void setDataUltimaAtualizacao(LocalDateTime dataUltimaAtualizacao) {
+        this.dataUltimaAtualizacao = dataUltimaAtualizacao;
     }
 }

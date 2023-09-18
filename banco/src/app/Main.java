@@ -7,6 +7,8 @@ import modelo.pagamento.Boleto;
 import modelo.pagamento.DocumentoPagavel;
 import modelo.pagamento.Holerite;
 
+import java.time.LocalDateTime;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -15,7 +17,8 @@ public class Main {
         pessoa.setDocumento("02105460186");
         pessoa.setRendimentoAnual(15_000d);
         //pessoa.setTipo(TIpoPessoa.FISICA);
-        System.out.println(pessoa.getTipo());
+        pessoa.setDataUltimaAtualizacao(LocalDateTime.parse("2023-09-27T13:20:00"));
+        System.out.println(pessoa.getDataUltimaAtualizacao());
 
 
         Conta minhaConta = new Conta(pessoa, 64, 0664);

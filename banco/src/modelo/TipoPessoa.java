@@ -1,6 +1,6 @@
 package modelo;
 
-public enum TIpoPessoa {
+public enum TipoPessoa {
     FISICA,
     JURIDICA;
 }
