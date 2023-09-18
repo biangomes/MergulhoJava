@@ -66,4 +66,8 @@ public class Conta {
     public void sacarComTaxa(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
     }
+
+    public void debitarTarifaMensal() {
+        sacar(saldo);
+    }
 }
