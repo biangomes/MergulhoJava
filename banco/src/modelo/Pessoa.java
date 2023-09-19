@@ -56,4 +56,15 @@ public class Pessoa {
     public void setDataUltimaAtualizacao(LocalDateTime dataUltimaAtualizacao) {
         this.dataUltimaAtualizacao = dataUltimaAtualizacao;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", documento='" + documento + '\'' +
+                ", rendimentoAnual=" + rendimentoAnual +
+                ", tipo=" + tipo +
+                ", dataUltimaAtualizacao=" + dataUltimaAtualizacao +
+                '}';
+    }
 }
