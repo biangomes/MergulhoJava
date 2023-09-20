@@ -67,4 +67,14 @@ public class Pessoa {
                 ", dataUltimaAtualizacao=" + dataUltimaAtualizacao +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        // se a instancia/referência for a mesma
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+
+        return documento.equals(((Pessoa) obj).documento) && nome.equals(((Pessoa) obj).nome);
+    }
 }

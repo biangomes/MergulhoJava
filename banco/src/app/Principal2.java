@@ -19,13 +19,12 @@ public class Principal2 {
         pessoas.add(pessoa3);
         pessoas.add(pessoa4);
 
-        for (Pessoa pessoa : pessoas) {
-            System.out.println(pessoa.getNome() + "," + pessoa.getTipo());
-        }
 
+        // metodo contains percorre toda a lista e verifica para qual objeto, se é igual ou não
+        // a verificação é pelo conteúdo
         boolean existePessoaNaLista = pessoas.contains(pessoa1);
-        System.out.println(existePessoaNaLista);
+        System.out.println("Existe pessoa4 na lista : " + existePessoaNaLista);
 
-        System.out.println(pessoa3.equals(pessoa4));        // false
+        System.out.println("Pessoa 3 é igual a pessoa 4 : " + pessoa3.equals(pessoa4));
     }
 }
