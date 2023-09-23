@@ -2,6 +2,7 @@ package modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Pessoa {
     private String nome;
@@ -69,12 +70,15 @@ public class Pessoa {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        // se a instancia/referência for a mesma
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (this.getClass() != obj.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return nome.equals(pessoa.nome) && documento.equals(pessoa.documento);
+    }
 
-        return documento.equals(((Pessoa) obj).documento) && nome.equals(((Pessoa) obj).nome);
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, documento);
     }
 }
